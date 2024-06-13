@@ -66,9 +66,9 @@ function Contact() {
           <div className="flex flex-col lg:max-w-xl">
             <h1 className="text-black text-3xl lg:text-4xl font-bold pt-3">Get In Touch</h1>
             <p className="text-black font-thin text-sm pb-3">
-              Thank you for visiting my portfolio. Whether you're interested in discussing potential collaborations, have inquiries about my work, or simply want to say hello, I'm excited to connect with you. Feel free to reach out through the contact form below, drop me an email, or connect with me on social media. <br />
-              Additionally, I'm actively seeking new opportunities to grow and contribute. If you have any exciting projects, job openings or internship openings, or partnership opportunities, I'd love to hear about them. Let's explore how we can work together to achieve our goals. Looking forward to connecting with you!
-            </p>
+  Thank you for visiting my portfolio. Whether you&apos;re interested in discussing potential collaborations, have inquiries about my work, or simply want to say hello, I&apos;m excited to connect with you. Feel free to reach out through the contact form below, drop me an email, or connect with me on social media. <br />
+  Additionally, I&apos;m actively seeking new opportunities to grow and contribute. If you have any exciting projects, job openings or internship openings, or partnership opportunities, I&apos;d love to hear about them. Let&apos;s explore how we can work together to achieve our goals. Looking forward to connecting with you!
+</p>
             <div className="flex gap-3 items-center">
             <a target='_blank' href="https://www.linkedin.com/in/ayush-sharma-7a88a3274/" class="text-3xl text-gray-500" title='LinkedIn'>
             <IoLogoLinkedin />

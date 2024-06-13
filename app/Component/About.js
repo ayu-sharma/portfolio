@@ -122,7 +122,7 @@ function About() {
         <div className=''>
         {aboutData.map((tab) => (
           <button
-            key={aboutData.id}
+            key={tab.id}
             onClick={() => handleButtonFunctions(tab.id)}
             className={`mr-4 text-black ${selectedTab === tab.id ? ' border-b-2 border-black ' : ''}`}
           >
@@ -132,7 +132,7 @@ function About() {
         </div>
         <div className='w-full mb-16'>
         {aboutData.map((tab) => (
-            <div className={`text-black pt-8 flex justify-between items-center ${selectedTab === tab.id ? '' : 'hidden'}`}>
+            <div key={tab.id} className={`text-black pt-8 flex justify-between items-center ${selectedTab === tab.id ? '' : 'hidden'}`}>
                 {tab.content}
             </div>
             ))}
