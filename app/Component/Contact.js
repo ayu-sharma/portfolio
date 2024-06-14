@@ -65,7 +65,7 @@ function Contact() {
         <div className="grid lg:grid-cols-2 custom:grid-cols-1 custom:grid gap-10 items-start">
           <div className="flex flex-col lg:max-w-xl">
             <h1 className="text-black text-3xl lg:text-4xl font-bold pt-3">Get In Touch</h1>
-            <p className="text-black font-thin text-sm pb-3">
+            <p className="text-black font-light text-sm pb-3">
   Thank you for visiting my portfolio. Whether you&apos;re interested in discussing potential collaborations, have inquiries about my work, or simply want to say hello, I&apos;m excited to connect with you. Feel free to reach out through the contact form below, drop me an email, or connect with me on social media. <br />
   Additionally, I&apos;m actively seeking new opportunities to grow and contribute. If you have any exciting projects, job openings or internship openings, or partnership opportunities, I&apos;d love to hear about them. Let&apos;s explore how we can work together to achieve our goals. Looking forward to connecting with you!
 </p>
@@ -78,7 +78,7 @@ function Contact() {
           </a>
           </div>
           </div>
-          <div className="flex flex-col justify-center items-center px-8 py-3 bg-light rounded-lg" style={{borderRadius: "15px"}}>
+          <div className="flex flex-col justify-center items-center px-8 py-12 lg:py-6 bg-light rounded-lg" style={{borderRadius: "15px"}}>
             <form onSubmit={handleSubmit} className="flex flex-col justify-center w-full text-black">
               <div className="flex flex-col justify-between gap-1">
                 <label htmlFor="Email">Your Email:</label>
@@ -123,7 +123,7 @@ function Contact() {
               >
                 {sending ? "Submitting" : "Submit"}
               </button>
-              <div className="h-6 py-2">
+              <div className="h-12 lg:h-6 py-2">
               {sent && (
                 <p className="text-center text-green-400 pb-4">Your email has been successfully sent!</p>
               )}

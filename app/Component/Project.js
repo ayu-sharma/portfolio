@@ -45,11 +45,11 @@ function Project() {
         <div className='flex flex-col px-3 w-full'>
           {/* Your project content here */}
           <h4 className='text-black text-lg py-2'>{project.fields.name}</h4>
-          <p className=' text-sm font-thin text-black'>
+          <p className=' text-sm font-extralight text-black'>
             {project.fields.description}
           </p>
           <div className='flex justify-between mt-5 max-w-xs w-full'>
-          <a target='_blank' href={project.fields.url} className='py-2 px-7 bg-white cursor-pointer text-black shadow-md shadow-slate-100' style={{borderRadius: "8px"}}>
+          <a target='_blank' href={project.fields.url} className='py-2 px-7 bg-white text-sm lg:text-normal cursor-pointer text-black shadow-md shadow-slate-100' style={{borderRadius: "8px"}}>
               Github Link
             </a>
             <a target='_blank' href={project.fields.demourl} className='py-2 px-4 text-black bg-white cursor-pointer shadow-md shadow-slate-100' style={{borderRadius: "8px"}}>

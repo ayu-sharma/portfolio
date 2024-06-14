@@ -106,7 +106,7 @@ function About() {
                 About Me
             </p>
             
-            <p className='text-black font-thin text-sm pb-10'>
+            <p className='text-black font-light text-sm pb-10'>
             I am a dedicated Frontend Engineer proficient in HTML, CSS, and JavaScript, with intermediate-level expertise in ReactJS and Next.js frameworks. Equipped with hands-on experience in Tailwind CSS and proficiency in tools like Airtable and Postman, I excel at creating dynamic web applications. My commitment to continuous learning is reflected in certifications in JavaScript and MERN Stack. With a solid academic background from VIT University and a penchant for immersive projects, I am poised to make a significant impact in the field of frontend development.
             </p>
             </div>

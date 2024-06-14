@@ -77,16 +77,16 @@ function Herosection() {
 
 
       <div>
-        <h1 className='text-black mb-2 md:text-4xl  lg:text-5xl font-extrabold' >
+        <h1 className='text-black mb-2 text-2xl md:text-4xl leading-2 lg:leading-none lg:text-5xl font-extrabold' >
           Hello, I am Ayush Sharma 
         </h1>
-        <p className='text-black font-thin text-sm'>
+        <p className='text-black font-light lg:text-xl text-md'>
         A Frontend Developer
         </p>
-        <p className='text-black font-thin text-sm'>
+        <p className='text-black font-extralight text-sm'>
             From Nurpur, Himachal Pradesh
         </p>
-        <p className='text-black font-thin text-sm'>
+        <p className='text-black font-thin text-xs'>
             Currently Studying in Vellore Institute of Technology(VIT), Bhopal
         </p>
         </div>
@@ -119,8 +119,8 @@ function Herosection() {
 
         {/* Button for small screens */}
         <button className=' text-base mt-6 px-3 py-2 lg:mb-10 bg-black rounded-xl hover:opacity-75 hover:cursor-pointer w-full custom:w-full custom:block  lg:hidden' onClick={handleDownloadBtn}>
-        {downloading ? ( <BarLoader color="#eef4f3" className='px-3 py-2' />) :( <>
-          <div className='flex justify-center items-center gap-2 text-white'>
+        {downloading ? ( <BarLoader color="#eef4f3" className='px-3 my-[10px] w-full custom:w-full mx-auto' />) :( <>
+          <div className='flex justify-center items-center gap-2  text-white'>
         <MdDownload />
         <span>Resume</span>
         </div>

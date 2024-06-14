@@ -19,6 +19,24 @@ function Navbar({ handleNavOptionClick }) {
     setIsOpen();
   };
 
+  const handleClickOutside = (event) => {
+    console.log("Document clicked");
+    if (navRef.current && !navRef.current.contains(event.target)) {
+      console.log("Clicked outside, closing menu");  // Log to help debug
+      setIsOpen(false);
+    } else {
+      console.log("Clicked inside the navbar");
+    }
+  };
+  useEffect(() => {
+    console.log("Adding event listener");
+    window.document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      console.log("Removing event listener");
+      window.document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className="navbar navbar-light bg-light navbar-expand-lg px-14">
       <div className="container-fluid">
