@@ -3,6 +3,8 @@ import React, { useState, useRef, useEffect  } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import Avatar from '@mui/material/Avatar';
+
+const animationHam = "https://lottie.host/2734f832-21f3-4d2a-8cf6-5e2be4ba2a97/sgqeU7NH1t.json"
 function Navbar({ handleNavOptionClick }) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeOption, setActiveOption] = useState("hersection");

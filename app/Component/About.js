@@ -43,38 +43,48 @@ function About() {
             </div>
           ),
         },
-        {
-          title: "Education",
-          id: "education",
-          content: (
-            <>
-              <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full'>
-              <div className='flex flex-col items-center'>
-              <FaSchool className='text-9xl' />
-                <p>Angels Public School</p>
-                </div>
+        // {
+        //   title: "Education",
+        //   id: "education",
+        //   content: (
+        //     <>
+        //       <div className='grid sm:grid-cols-1 md:grid-cols-2 hidden lg:grid-cols-2 w-full'>
+        //       <div className='flex flex-col items-center'>
+        //       <FaSchool className='text-9xl' />
+        //         <p>Angels Public School</p>
+        //         </div>
 
-                <div className='flex flex-col items-center'>
-                  <FaSchool className='text-9xl'/>
+        //         <div className='flex flex-col items-center'>
+        //           <FaSchool className='text-9xl'/>
               
-                <p>Vellore Institute of Technology(VIT)</p>
-                </div>
-                </div>
-            </>
-          ),
-        },
+        //         <p>Vellore Institute of Technology(VIT)</p>
+        //         </div>
+        //         </div>
+        //     </>
+        //   ),
+        // },
         {
           title: "Certifications",
           id: "certifications",
           content: (
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 lg:grid-cols-2 w-full">
               <div className='flex flex-col items-center'>
-              <BiSolidCertification className='text-9xl'/>
-              <div>The Complete JavaScript Course 2024: From Zero to Expert!</div>
+              <Image className='text-9xl'
+               src="/Images/javascript.jpg"
+               alt="mern-stack"
+               width={200}
+               height={200}
+              />
+              <div className='py-3 text-center max-w-xs'>The Complete JavaScript Course 2024: From Zero to Expert!</div>
               </div>
               <div  className='flex flex-col items-center' >
-              <BiSolidCertification className='text-9xl'/>
-              <div>Introduction to MERN Stack</div>
+              <Image className='text-9xl'
+               src="/Images/mern-stack.jpg"
+               alt="mern-stack"
+               width={200}
+               height={200}
+              />
+              <div className='py-3'>Introduction to MERN Stack</div>
               </div>
             </div>
           ),

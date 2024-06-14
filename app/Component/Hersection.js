@@ -96,7 +96,7 @@ function Herosection() {
       <button className=' text-black text-base mt-6 px-5 lg:px-3 lg:py-2 bg-black rounded-xl hover:opacity-75 hover:cursor-pointer custom:hidden w-auto lg:block hidden' onClick={handleDownloadBtn}>
       {downloading ? (
   <>
-    <BarLoader color="#eef4f3" />
+    <BarLoader color="#eef4f3" className='my-[10px] ' />
   </>
 ) : (
   <>
