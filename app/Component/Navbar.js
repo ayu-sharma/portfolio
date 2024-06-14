@@ -38,7 +38,7 @@ function Navbar({ handleNavOptionClick }) {
   }, []);
 
   return (
-    <nav className="navbar navbar-light bg-light navbar-expand-lg px-14">
+    <nav className="navbar navbar-light bg-light navbar-expand-lg px-7 lg:px-14">
       <div className="container-fluid">
     {/* <div classNameName='py-6 px-16 bg-[#white] top-0 left-0 z-50 shadow' style={{ width: '100%' }}> */}
     <a className="navbar-brand lg:text-3xl text-xl font-semibold md:mr-10" href="#" onClick={() => handleOptionClick("hersection")}>PortFolio</a>
