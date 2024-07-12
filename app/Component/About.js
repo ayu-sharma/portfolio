@@ -1,18 +1,12 @@
 "use client"
 import React from 'react'
-import useIntersectionObserver from './Observer-hook';
 import Image from 'next/image'
-import { useState, useEffect, useRef } from "react";
-import Navbar from './Navbar';
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiNextdotjs } from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
-import { FaSchool } from "react-icons/fa6";
-import { motion } from "framer-motion";
 import ReactFlipCard from 'react-card-flip';
-import zIndex from '@mui/material/styles/zIndex';
 
 
 function About() {

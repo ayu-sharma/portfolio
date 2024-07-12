@@ -1,14 +1,9 @@
 "use client"
 import Image from 'next/image';
-import useIntersectionObserver from './Observer-hook';
 import { useState, useEffect, useRef } from 'react';
-import Navbar from './Navbar';
-import Typewriter from 'typewriter-effect';
 import { MdDownload } from "react-icons/md";
 import { catchFile } from '../api/airtable-api';
 import BarLoader from "react-spinners/BarLoader";
-import axios from 'axios';
-import { MoonLoader } from 'react-spinners';
 
 
 function Herosection() {

@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import React from 'react';
 import { postTask } from "../api/airtable-api";
 import axios from "axios";
-import Navbar from "./Navbar";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 

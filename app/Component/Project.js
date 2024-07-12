@@ -1,7 +1,5 @@
 "use client"
 import React from 'react'
-import Image from 'next/image'
-import Navbar from './Navbar';
 import { getProjects } from '../api/airtable-api';
 import { useState, useEffect, useRef } from 'react';
 import Spinner from './Spinner';
