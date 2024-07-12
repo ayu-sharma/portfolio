@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import {React, useState} from 'react'
 import Image from 'next/image'
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
@@ -10,7 +10,6 @@ import ReactFlipCard from 'react-card-flip';
 
 
 function About() {
-    // const isVisible = useIntersectionObserver();
     const[isFlipped1, setIsFlipped1] = useState(true)
     const [isFlipped2, setIsFlipped2] = useState(true)
     const [isFlipped3, setIsFlipped3] = useState(true)
