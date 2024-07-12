@@ -10,10 +10,35 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { SiNextdotjs } from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
 import { FaSchool } from "react-icons/fa6";
-import { BiSolidCertification } from "react-icons/bi";
+import { motion } from "framer-motion";
+import ReactFlipCard from 'react-card-flip';
+import zIndex from '@mui/material/styles/zIndex';
+
 
 function About() {
     // const isVisible = useIntersectionObserver();
+    const[isFlipped1, setIsFlipped1] = useState(true)
+    const [isFlipped2, setIsFlipped2] = useState(true)
+    const [isFlipped3, setIsFlipped3] = useState(true)
+    const [isFlipped4, setIsFlipped4] = useState(true)
+
+    const handleFlipped1 = (e) => {
+      e.preventDefault()
+      setIsFlipped1(!isFlipped1)
+    }
+    const handleFlipped2 = (e) => {
+      e.preventDefault()
+      setIsFlipped2(!isFlipped2)
+    }
+    const handleFlipped3 = (e) => {
+      e.preventDefault()
+      setIsFlipped3(!isFlipped3)
+    } 
+    const handleFlipped4 = (e) => {
+      e.preventDefault()
+      setIsFlipped4(!isFlipped4)
+    }
+
     const aboutData =  [
         {
           title: "Skills",
@@ -43,50 +68,89 @@ function About() {
             </div>
           ),
         },
-        // {
-        //   title: "Education",
-        //   id: "education",
-        //   content: (
-        //     <>
-        //       <div className='grid sm:grid-cols-1 md:grid-cols-2 hidden lg:grid-cols-2 w-full'>
-        //       <div className='flex flex-col items-center'>
-        //       <FaSchool className='text-9xl' />
-        //         <p>Angels Public School</p>
-        //         </div>
-
-        //         <div className='flex flex-col items-center'>
-        //           <FaSchool className='text-9xl'/>
-              
-        //         <p>Vellore Institute of Technology(VIT)</p>
-        //         </div>
-        //         </div>
-        //     </>
-        //   ),
-        // },
         {
           title: "Certifications",
           id: "certifications",
           content: (
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 lg:grid-cols-2 w-full">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 items-center w-full">
               <div className='flex flex-col items-center'>
-              <Image className='text-9xl'
+              <ReactFlipCard isFlipped={!isFlipped1} flipDirection='horizontal'>
+              <Image className='text-9xl cursor-pointer'
+               src="/Images/cloud-digital.jpg"
+               alt="mern-stack"
+               width={400}
+               height={400}
+               onClick={handleFlipped1}
+              />
+              <Image className='cursor-pointer border-1'
+               src="/Images/cloud-text.png"
+               alt='ibm-text'
+               width={400}
+               height={400}
+               onClick={handleFlipped1}
+              />
+              </ReactFlipCard>
+              </div>
+              <div className='items-center flex flex-col'>
+                <ReactFlipCard isFlipped={!isFlipped2} flipDirection='horizontal'>
+              <Image className='text-9xl cursor-pointer'
                src="/Images/javascript.jpg"
                alt="mern-stack"
-               width={200}
-               height={200}
+               width={400}
+               height={400}
+               onClick={handleFlipped2}
               />
-              <div className='py-3 text-center max-w-xs'>The Complete JavaScript Course 2024: From Zero to Expert!</div>
+              <Image
+              className='cursor-pointer' 
+              src="/Images/javascript.png"
+              alt='mern-text'
+              width={400}
+              height={400}
+              onClick={handleFlipped2}
+              />              
+              </ReactFlipCard>
               </div>
-              <div  className='flex flex-col items-center' >
-              <Image className='text-9xl'
+
+              <div className='items-center flex flex-col'>
+                <ReactFlipCard isFlipped={!isFlipped3} flipDirection='horizontal' className="">
+              <Image className='text-9xl cursor-pointer'
                src="/Images/mern-stack.jpg"
                alt="mern-stack"
-               width={200}
-               height={200}
+               width={400}
+               height={400}
+               onClick={handleFlipped3}
               />
-              <div className='py-3'>Introduction to MERN Stack</div>
+              <Image
+              className='cursor-pointer' 
+              src="/Images/mern.png"
+              alt='mern-text'
+              width={400}
+              height={400}
+              onClick={handleFlipped3}
+              />              
+              </ReactFlipCard>
               </div>
-            </div>
+              <div className='flex flex-col items-center'>
+              <ReactFlipCard isFlipped={!isFlipped4} flipDirection='horizontal'>
+              <Image className='text-9xl cursor-pointer'
+               src="/Images/ibm.jpg"
+               alt="mern-stack"
+               width={400}
+               height={400}
+               onClick={handleFlipped4}
+              />
+              <Image className='cursor-pointer border-1'
+               src="/Images/ibm.png"
+               alt='ibm-text'
+               width={400}
+               height={400}
+               onClick={handleFlipped4}
+              />
+              </ReactFlipCard>
+              </div>
+
+              </div>
+
           ),
         },
       ];
@@ -97,8 +161,8 @@ function About() {
       const handleButtonFunctions = (taskId) => {
         setSelectedTab(taskId);
         }
-        console.log(selectedTab)
-      console.log("this is", aboutData["id"])
+        // console.log(selectedTab)
+      // console.log("this is", aboutData["id"])
 
 
   return (
@@ -117,7 +181,9 @@ function About() {
             </p>
             
             <p className='text-black font-light text-sm pb-10'>
-            I am a dedicated Frontend Engineer proficient in HTML, CSS, and JavaScript, with intermediate-level expertise in ReactJS and Next.js frameworks. Equipped with hands-on experience in Tailwind CSS and proficiency in tools like Airtable and Postman, I excel at creating dynamic web applications. My commitment to continuous learning is reflected in certifications in JavaScript and MERN Stack. With a solid academic background from VIT University and a penchant for immersive projects, I am poised to make a significant impact in the field of frontend development.
+            I am a dedicated Frontend Engineer proficient in HTML, CSS, and JavaScript, with intermediate-level expertise in ReactJS and Next.js frameworks. I excel at creating dynamic web applications and have hands-on experience in Tailwind CSS, along with proficiency in tools like Airtable and Postman. My technical skills extend to understanding REST API basics, utilizing GitHub for version control, and working with various CSS frameworks such as Tailwind, Bootstrap, and Material UI.<br/>
+            My commitment to continuous learning is evidenced by my certifications in JavaScript and MERN Stack, alongside my achievement as a <span className='text-blue-600'><a href='https://www.credly.com/badges/eac99496-0a68-409d-9341-5df989b3173e/public_url' target='_/blank'> Google Cloud Certified Cloud Digital Leader</a></span>. This certification highlights my foundational knowledge of cloud concepts and Google Cloud products, further enhancing my ability to drive digital transformation initiatives.<br />
+            With a solid academic background from VIT University and a penchant for immersive projects, I bring a strong combination of technical expertise and a passion for innovation, making me poised to make a significant impact in the field of frontend development.
             </p>
             </div>
 
@@ -134,7 +200,7 @@ function About() {
           <button
             key={tab.id}
             onClick={() => handleButtonFunctions(tab.id)}
-            className={`mr-4 text-black ${selectedTab === tab.id ? ' border-b-2 border-black ' : ''}`}
+            className={`mr-4 text-black ${selectedTab === tab.id ? ' border-b-2 border-black translate-x-1 scroll-smooth' : ''} transition-all duration-300 ease-in-out`}
           >
             {tab.title}
           </button>

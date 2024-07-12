@@ -21,26 +21,26 @@ function Navbar({ handleNavOptionClick }) {
     setIsOpen();
   };
 
-  const handleClickOutside = (event) => {
-    console.log("Document clicked");
-    if (navRef.current && !navRef.current.contains(event.target)) {
-      console.log("Clicked outside, closing menu");  // Log to help debug
-      setIsOpen(false);
-    } else {
-      console.log("Clicked inside the navbar");
-    }
-  };
-  useEffect(() => {
-    console.log("Adding event listener");
-    window.document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      console.log("Removing event listener");
-      window.document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  // const handleClickOutside = (event) => {
+  //   console.log("Document clicked");
+  //   if (navRef.current && !navRef.current.contains(event.target)) {
+  //     console.log("Clicked outside, closing menu");  // Log to help debug
+  //     setIsOpen(false);
+  //   } else {
+  //     console.log("Clicked inside the navbar");
+  //   }
+  // };
+  // useEffect(() => {
+  //   console.log("Adding event listener");
+  //   window.document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     console.log("Removing event listener");
+  //     window.document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, []);
 
   return (
-    <nav className="navbar navbar-light bg-light navbar-expand-lg px-7 lg:px-14">
+    <nav className="navbar navbar-light bg-light navbar-expand-lg px-7 lg:px-14" style={{ zIndex: 1000, position: 'fixed', width: '100%' }}>
       <div className="container-fluid">
     {/* <div classNameName='py-6 px-16 bg-[#white] top-0 left-0 z-50 shadow' style={{ width: '100%' }}> */}
     <a className="navbar-brand lg:text-3xl text-xl font-semibold md:mr-10" href="#" onClick={() => handleOptionClick("hersection")}>PortFolio</a>

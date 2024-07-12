@@ -1,4 +1,5 @@
 "use client"
+import zIndex from "@mui/material/styles/zIndex";
 import About from "./Component/About";
 import Contact from "./Component/Contact";
 import Footer from "./Component/Footer";
@@ -19,14 +20,14 @@ export default function Home() {
   return (
     <>
       <div className="relative min-h-screen">
-      <div className="fixed w-full">
+      <div className="fixed w-full" style={{zIndex: 10}}>
           <div className="">
-            <Navbar handleNavOptionClick={handleNavOptionClick} />
+            <Navbar className="navbar" handleNavOptionClick={handleNavOptionClick} />
           </div>
         </div>
         <div className="min-h-[100vh] flex flex-col justify-between">
     <div className="bg-[url('/Images/.png')] py-4 px-4 ">
-    <div id="hersection">
+    <div id="hersection" className="flex flex-col justify-center items-center">
     {selectedOption === "hersection" && <Hersection />}
    </div>
    <div id="about">

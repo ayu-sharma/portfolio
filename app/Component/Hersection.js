@@ -83,17 +83,17 @@ function Herosection() {
         <p className='text-black font-light lg:text-xl text-md'>
         A Frontend Developer
         </p>
-        <p className='text-black font-extralight text-sm'>
+        <p className='text-black font-extralight text-md'>
             From Nurpur, Himachal Pradesh
         </p>
-        <p className='text-black font-thin text-xs'>
+        <p className='text-black font-thin text-sm'>
             Currently Studying in Vellore Institute of Technology(VIT), Bhopal
         </p>
         </div>
 
 
       {/* Button for large screens */}
-      <button className=' text-black text-base mt-6 px-5 lg:px-3 lg:py-2 bg-black rounded-xl hover:opacity-75 hover:cursor-pointer custom:hidden w-auto lg:block hidden' onClick={handleDownloadBtn}>
+      <button className=' text-black text-base mt-6 px-5 lg:px-3 lg:py-2 bg-black rounded-xl hover:opacity-75 hover:cursor-pointer custom:hidden w-auto lg:block hidden' onClick={handleDownloadBtn} arget='_/blank'>
       {downloading ? (
   <>
     <BarLoader color="#eef4f3" className='my-[10px] ' />
