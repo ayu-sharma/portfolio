@@ -26,7 +26,7 @@ const Navbar = ({ handleNavOptionClick }) => {
           onClick={(event) => handleOptionClick("home", event)} // Pass event to prevent default behavior
         >
           <span style={{ color: 'white' }}>PORT</span>
-          <span className="text-[#d1cfcf] sm:text-yellow-500 ml-1">FOLIO</span>
+          <span className="md:text-[#d1cfcf] text-yellow-500 ml-1">FOLIO</span>
         </a>
 
         {/* Toggle for mobile view */}
