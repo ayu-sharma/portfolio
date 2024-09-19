@@ -1,131 +1,92 @@
-"use client"
+"use client";
 import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
 import { MdDownload } from "react-icons/md";
+import { useState, useEffect } from 'react';
+import BarLoader from 'react-spinners/BarLoader';
+import axios from 'axios';
 import { catchFile } from '../api/airtable-api';
-import BarLoader from "react-spinners/BarLoader";
-
 
 function Herosection() {
+  const [downloading, setIsDownloading] = useState(false);
+  const [pdfDownloadFile, setPdfFile] = useState();
 
-    const [pdfData, setPdfData] = useState(null);
-    const [downloading, setDownloading] = useState(false);
   
-
-      
-      const fetchData = async () => {
-        try {
-          const result = await catchFile(); 
-          if (!result.error) {
-            setPdfData(result.data); 
-          } else {
-            console.error("Error fetching CV data:", result.error);
-          }
-        } catch (error) {
-          console.error("Error fetching CV data:", error);
-        }
-      };
-      useEffect(() => {
-        fetchData();
-        
-      },[]);
-
-
+  const pdfFile = async () => {
+    try {
+      const response = await catchFile()
+      if (!response.error) {
+        // console.log("resopose is successful")
+        setPdfFile(response.data)
+      }else {
+        // console.log("Error in fetching data", response.error);
+      }
+    }catch (e) {
+      // console.error('Error:', e);
+    }
+  }
+  // console.log(pdfDownloadFile,"this is ")
+  
+  useEffect(() => {
+    pdfFile();
+  }, []);
+  
   const handleDownloadBtn = async (e) => {
     e.preventDefault();
-    setDownloading(true);
-    await fetchData();
-    // console.log("Clicked", pdfData);
-    if (pdfData) {
-      const downloadLink = document.createElement('a');
-      downloadLink.href = pdfData;
-      downloadLink.download = "Resume.pdf";
-      downloadLink.click();
+    // console.log("download start",)
+    setIsDownloading(true);
+    await pdfFile();
+    if (pdfDownloadFile){
+      const downloadPdf = document.createElement('a');
+      downloadPdf.href = pdfDownloadFile[0];
+      downloadPdf.download = 'Ayush_Sharma_Resume.pdf';
+      downloadPdf.click();
     }
-
- 
     else {
-      console.log("Download Error")
+      // console.log("Download Error")
     } 
-    setDownloading(false);
-
-// console.log("this is pdf data", pdfData)
-    } 
-    
-  
-  
+    setIsDownloading(false);
+  }
+console.log(downloading, "this is downloading")
   return (
-    <>
-    <section className={`pt-10 lg:px-11 custom:min-h-[100vh] custom:flex custom:justify-center custom:items-center`}>
-    <div className={`flex flex-col lg:flex-row custom:flex custom:flex-col custom:justify-center custom:items-center lg:justify-between items-center justify-center`}>
-    <div className='flex flex-col items-center lg:items-start' >
-
-
-    <div className='rounded-full custom:block lg:hidden bg-[#fcfcfce7] my-4 lg:my-0'>
-          <Image
-          className='w-[300px] md:w-[500px]'
-          src="/Images/Image-hero.png"
-                 alt="Image1"
-                 height={300}
-                 width={550} />
+    <section className="min-h-screen flex justify-center bg-[url('/Images/Image-hero.png')] lg:bg-none bg-center bg-cover lg:bg-black">
+      <div className="grid grid-cols-1 lg:grid-cols-3 w-full max-w-screen-3xl">
+        {/* Left Section with Text */}
+        <div className="col-span-1 flex flex-col justify-center text-white md:pl-20 pl-10 lg:pl-36 lg:bg-none bg-black bg-opacity-50">
+          <h1 className="mb-3">
+            <span className='text-2xl tracking-wide lg:text-4xl relative font-semibold'>My Name is </span> <br/> <span className='lg:text-7xl md:text-6xl text-4xl  absolute tracking-wider font-extrabold'>Ayush Sharma</span> 
+          </h1>
+          <div className='relative'>
+          <p className="lg:text-sm text-xs font-light mb-2 mt-[30px] md:pt-6 lg:pt-9">I'm a FullStack Web Developer</p>
+          <button
+            className="absolute top-7 md:top-14 lg:top-20 mt-4 py-2 px-4 bg-yellow-500 text-black font-bold flex items-center gap-2 rounded hover:bg-yellow-600 transition-all"
+            onClick={handleDownloadBtn}
+          >
+            {downloading ? (
+              <BarLoader color="#000000" />
+            ) : (
+              <>
+                <MdDownload />
+                <div className='text-sm md:text-md lg:text-xl'>Resume</div>
+              </>
+            )}
+          </button>
         </div>
-
-
-      <div>
-        <h1 className='text-black mb-2 text-2xl md:text-4xl leading-2 lg:leading-none lg:text-5xl font-extrabold' >
-          Hello, I am Ayush Sharma 
-        </h1>
-        <p className='text-black font-light lg:text-xl text-md'>
-        A Frontend Developer
-        </p>
-        <p className='text-black font-extralight text-md'>
-            From Nurpur, Himachal Pradesh
-        </p>
-        <p className='text-black font-thin text-sm'>
-            Currently Studying in Vellore Institute of Technology(VIT), Bhopal
-        </p>
+            </div>
+        {/* Right Section with Image */}
+        <div className="col-span-2 hidden  lg:flex w-full">
+          <div className="overflow-hidden h-full w-full">
+            <Image
+              src="/Images/Image-hero.png" 
+              alt="Hero Image"
+              width={800}
+              height={700}
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
-
-
-      {/* Button for large screens */}
-      <button className=' text-black text-base mt-6 px-5 lg:px-3 lg:py-2 bg-black rounded-xl hover:opacity-75 hover:cursor-pointer custom:hidden w-auto lg:block hidden' onClick={handleDownloadBtn} arget='_/blank'>
-      {downloading ? (
-  <>
-    <BarLoader color="#eef4f3" className='my-[10px] ' />
-  </>
-) : (
-  <>
-  <div className='flex justify-center items-center gap-2 text-white'>
-    <MdDownload />
-    <span>Resume</span>
- </div>
-  </>
-)}    
-      </button>
       </div>
-        <div className='rounded-full lg:block custom:hidden hidden bg-[#fcfcfce7] my-4 lg:my-0'>
-          <Image
-          className='w-[300px] lg:w-[550px]'
-          src="/Images/Image-hero.png"
-                 alt="Image1"
-                 height={300}
-                 width={550} />
-        </div>
-
-        {/* Button for small screens */}
-        <button className=' text-base mt-6 px-3 py-2 lg:mb-10 bg-black rounded-xl hover:opacity-75 hover:cursor-pointer w-full custom:w-full custom:block  lg:hidden' onClick={handleDownloadBtn}>
-        {downloading ? ( <BarLoader color="#eef4f3" className='px-3 my-[10px] w-full custom:w-full mx-auto' />) :( <>
-          <div className='flex justify-center items-center gap-2  text-white'>
-        <MdDownload />
-        <span>Resume</span>
-        </div>
-        </>
-        )}
-      </button>
-        </div>
-   </section>
-   </>
-  )
-
+    </section>
+  );
 }
-export default Herosection
+
+export default Herosection;

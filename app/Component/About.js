@@ -7,6 +7,7 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { SiNextdotjs } from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
 import ReactFlipCard from 'react-card-flip';
+import { DiNodejs } from "react-icons/di";
 
 
 function About() {
@@ -37,7 +38,7 @@ function About() {
           title: "Skills",
           id: "skills",
           content: (
-            <div className="grid custom:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full">
+            <div className="grid custom:grid-cols-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full">
               <div className='flex flex-col items-center'>
               <div><FaHtml5 className='text-12xl text-9xl'/></div>
               <p>Html</p>
@@ -58,6 +59,10 @@ function About() {
               <div><RiReactjsLine className='text-9xl' /></div>
               <p>ReactJS</p>
               </div>
+              <div className='flex flex-col items-center'>
+              <div>< DiNodejs className='text-9xl lg:mt-4'  /></div>
+              <p>NodeJS</p>
+              </div>
             </div>
           ),
         },
@@ -65,7 +70,7 @@ function About() {
           title: "Certifications",
           id: "certifications",
           content: (
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 items-center w-full">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 items-center w-full px-6">
               <div className='flex flex-col items-center'>
               <ReactFlipCard isFlipped={!isFlipped1} flipDirection='horizontal'>
               <Image className='text-9xl cursor-pointer'
@@ -159,8 +164,8 @@ function About() {
 
 
   return (
-    <section className=''>
-    <div className="">
+    <section className='bg-[#ececec]'>
+    <div className="px-10">
         <div className=''>
             <div className='grid lg:grid-cols-2 custom:grid-cols-1 custom:grid place-items-center lg:items-start lg:gap-10 py-20 lg:px-16'>
             <Image src="/Images/about-img.jpg"

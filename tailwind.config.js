@@ -17,8 +17,62 @@ module.exports = {
       },
     },
     extend: {
+      keyframes: {
+        openTop: {
+          '0%': { transform: 'rotate(0) translate(0, 0)' },
+          '50%': { transform: 'rotate(45deg) translate(0,0)' },
+          '100%': { transform: 'rotate(45deg) translateY(0.375rem)' },
+        },
+        openMiddle: {
+          '0%': { opacity: '1' },
+          '50%': { opacity: '0'},
+          '100%': { opacity: '0' },
+        },
+        openBottom: {
+          '0%': { transform: 'rotate(0) translate(0, 0)' },
+          '50%': { transform: 'rotate(-45deg) translate(0,0)' },
+          '100%': { transform: 'rotate(-45deg) translateY(-0.375rem)' },
+        },
+        closeTop: {
+          '0%': { transform: 'rotate(45deg) translate(0.75em, 1.25em)' },
+          '50%': { transform: 'rotate(0) translate(0, 0)' },
+          '100%': { transform: 'rotate(0) translate(0, 0)' },
+        },
+        closeMiddle: {
+          '0%': { opacity: '0' },
+          '50%': { opacity: '0'},
+          '100%': { opacity: '1' },
+        },
+        closeBottom: {
+          '0%': { transform: 'rotate(135) translate(-0.5em, 1em)' },
+          '50%': { transform: 'rotate(0) translate(0, 0)' },
+          '100%': { transform: 'rotate(0) translate(0, 0)' },
+        },
+        smNav: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        smNavClose: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
+        factAni: {
+          '0%': { opacity: '0'},
+          '100%': { opacity: '1'}
+        }
+      },
+      animation: {
+        openTop: 'openTop 0.3s ease-out forwards',
+        openMiddle: 'openMiddle 0.3s ease-out forwards',
+        openBottom: 'openBottom 0.3s ease-out forwards',
+        closeTop: 'closeTop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+        closeMiddle: 'closeMiddle 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+        closeBottom: 'closeBottom 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+        smNav: 'smNav 0.3s ease-in-out forwards',
+        smNavClose: 'smNavClose 0.3s ease-in-out forwards',
+        factAni: 'factAni 0.3s ease-in-out forwards'
+      },
       screens: {
-        'custom': {'raw': '(min-width: 1024px) and (min-height: 1368px)'},
       },
       colors: {
         border: "hsl(var(--border))",

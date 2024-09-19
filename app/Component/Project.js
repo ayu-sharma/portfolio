@@ -29,7 +29,7 @@ function Project() {
 
   return (
     <>
-    <div className=''>
+    <div className='px-10'>
            {/* <div className="">
    <Navbar/>
    </div> */}
