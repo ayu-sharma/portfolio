@@ -1,11 +1,10 @@
 "use client"
 import {React, useState} from 'react'
 import Image from 'next/image'
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import { SiNextdotjs } from "react-icons/si";
-import { RiReactjsLine } from "react-icons/ri";
+import { FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { IoLogoJavascript } from 'react-icons/io';
+import { SiNextdotjs } from 'react-icons/si';
+import { RiReactjsLine } from 'react-icons/ri';
 import ReactFlipCard from 'react-card-flip';
 import { DiNodejs } from "react-icons/di";
 

@@ -56,7 +56,7 @@ console.log(downloading, "this is downloading")
             <span className='text-2xl tracking-wide lg:text-4xl relative font-semibold'>My Name is </span> <br/> <span className='lg:text-7xl md:text-6xl text-4xl  absolute tracking-wider font-extrabold'>Ayush Sharma</span> 
           </h1>
           <div className='relative'>
-          <p className="lg:text-sm text-xs font-light mb-2 mt-[30px] md:pt-6 lg:pt-9">I'm a FullStack Web Developer</p>
+          <p className="lg:text-sm text-xs font-light mb-2 mt-[30px] md:pt-6 lg:pt-9">I&apos;m a FullStack Web Developer</p>
           <button
             className="absolute top-7 md:top-14 lg:top-20 mt-4 py-2 px-4 bg-yellow-500 text-black font-bold flex items-center gap-2 rounded hover:bg-yellow-600 transition-all"
             onClick={handleDownloadBtn}
