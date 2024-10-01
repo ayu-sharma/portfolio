@@ -29,7 +29,7 @@ function Project() {
 
   return (
     <>
-    <div className='px-10'>
+    <div className='sm:px-10 px-4'>
            {/* <div className="">
    <Navbar/>
    </div> */}
@@ -39,7 +39,7 @@ function Project() {
             <div className='grid lg:grid-cols-2 place-items-center gap-10 py-10'>
   {projects?.map((project) => (
     <div key={project.id} className='w-full'>
-      <div className='flex flex-col items-center lg:items-start px-4 py-3 bg-[#fcfcfce7]' style={{borderRadius: "10px"}}>
+      <div className='flex flex-col items-center lg:items-start sm:px-4 py-3 bg-[#fcfcfce7]' style={{borderRadius: "10px"}}>
         <div className='flex flex-col px-3 w-full'>
           {/* Your project content here */}
           <h4 className='text-black text-lg py-2'>{project.fields.name}</h4>

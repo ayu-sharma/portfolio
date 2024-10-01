@@ -60,7 +60,7 @@ function Contact() {
 
   return (
     <>
-      <div className="py-20 lg:px-16 bg-[#dad9d9] px-10">
+      <div className="py-20 lg:px-16 bg-[#dad9d9] sm:px-10 px-4">
         <div className="grid lg:grid-cols-2 custom:grid-cols-1 custom:grid gap-10 items-start">
           <div className="flex flex-col lg:max-w-xl">
             <h1 className="text-black text-3xl lg:text-4xl font-bold py-3">Get In Touch</h1>

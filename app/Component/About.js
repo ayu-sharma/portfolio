@@ -7,7 +7,9 @@ import { SiNextdotjs } from 'react-icons/si';
 import { RiReactjsLine } from 'react-icons/ri';
 import ReactFlipCard from 'react-card-flip';
 import { DiNodejs } from "react-icons/di";
-
+import { SiMysql } from "react-icons/si";
+import { SiPython } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
 
 function About() {
     const[isFlipped1, setIsFlipped1] = useState(true)
@@ -61,6 +63,18 @@ function About() {
               <div className='flex flex-col items-center'>
               <div>< DiNodejs className='text-9xl lg:mt-4'  /></div>
               <p>NodeJS</p>
+              </div>
+              <div className='flex flex-col items-center'>
+              <div>< SiMysql className='text-9xl lg:mt-4'  /></div>
+              <p>My SQL</p>
+              </div>
+              <div className='flex flex-col items-center'>
+              <div>< SiPython className='text-9xl lg:mt-4'  /></div>
+              <p>Python</p>
+              </div>
+              <div className='flex flex-col items-center'>
+              <div>< SiMongodb className='text-9xl lg:mt-4'  /></div>
+              <p>MongoDB</p>
               </div>
             </div>
           ),
@@ -164,7 +178,7 @@ function About() {
 
   return (
     <section className='bg-[#ececec]'>
-    <div className="px-10">
+    <div className="sm:px-10 px-4">
         <div className=''>
             <div className='grid lg:grid-cols-2 custom:grid-cols-1 custom:grid place-items-center lg:items-start lg:gap-10 py-20 lg:px-16'>
             <Image src="/Images/about-img.jpg"
