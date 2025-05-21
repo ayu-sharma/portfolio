@@ -36,7 +36,7 @@ export default function Home() {
     <>
       <div className="relative min-h-screen">
         <div className="w-full" style={{ zIndex: 10 }}>
-          <div className="fixed z-10 w-full">
+          <div className="z-[50] w-full">
             <Navbar handleNavOptionClick={handleNavOptionClick} />
           </div>
         </div>

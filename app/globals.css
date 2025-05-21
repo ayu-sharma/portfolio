@@ -3,3 +3,21 @@
   @tailwind components;
   @tailwind utilities;
 
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }

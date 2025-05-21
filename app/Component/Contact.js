@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import React from 'react';
 import { postTask } from "../api/airtable-api";
 import axios from "axios";
-import { IoLogoLinkedin } from "react-icons/io5";
+import { IoLogoLinkedin, IoMail, IoLocation } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
-
+import { FiSend } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -17,7 +17,6 @@ function Contact() {
   const [errorMessage, setErrorMessage] = useState('');
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
-  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,7 +28,7 @@ function Contact() {
     if (sent) {
       const timer = setTimeout(() => {
         setSent(false);
-      }, 2000); 
+      }, 3000); 
       return () => clearTimeout(timer);
     }
   }, [sent]);
@@ -50,7 +49,6 @@ function Contact() {
           message: ''
         });
       } catch (error) {
-        // console.error('Error sending email:', error.message);
         setErrorMessage('Failed to send email. Please try again later.');
       } finally {
         setSending(false);
@@ -59,82 +57,183 @@ function Contact() {
   };
 
   return (
-    <>
-      <div className="py-20 lg:px-16 bg-[#dad9d9] sm:px-10 px-4">
-        <div className="grid lg:grid-cols-2 custom:grid-cols-1 custom:grid gap-10 items-start">
-          <div className="flex flex-col lg:max-w-xl">
-            <h1 className="text-black text-3xl lg:text-4xl font-bold py-3">Get In Touch</h1>
-            <p className="text-black font-light text-sm pb-7">
-  Thank you for visiting my portfolio. Whether you&apos;re interested in discussing potential collaborations, have inquiries about my work, or simply want to say hello, I&apos;m excited to connect with you. Feel free to reach out through the contact form below, drop me an email, or connect with me on social media. <br />
-  Additionally, I&apos;m actively seeking new opportunities to grow and contribute. If you have any exciting projects, job openings or internship openings, or partnership opportunities, I&apos;d love to hear about them. Let&apos;s explore how we can work together to achieve our goals. Looking forward to connecting with you!
-</p>
-            <div className="flex gap-3 items-center">
-            <a target='_blank' href="https://www.linkedin.com/in/ayush-sharma-7a88a3274/" class="text-3xl text-gray-500" title='LinkedIn'>
-            <IoLogoLinkedin />
-          </a>
-          <a target='_blank' href="https://github.com/ayu-sharma" class="text-3xl text-gray-500" title='LinkedIn'>
-          <FaGithub />
-          </a>
-          </div>
-          </div>
-          <div className="flex flex-col justify-center items-center px-8 py-12 lg:py-6 bg-[#e6e5e5] rounded-lg" style={{borderRadius: "15px"}}>
-            <form onSubmit={handleSubmit} className="flex flex-col justify-center w-full text-black">
-              <div className="flex flex-col justify-between gap-1">
-                <label htmlFor="Email">Your Email:</label>
+    <div className="min-h-screen bg-[#0a0a0a] py-16">
+      <div className="max-w-4xl mx-auto px-4">
+        {/* Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            Get In Touch
+          </h1>
+          <p className="mt-4 text-gray-400">
+            Let's connect and explore opportunities to collaborate together
+          </p>
+        </motion.div>
+
+        {/* Main Content */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Contact Info */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/10"
+          >
+            <h2 className="text-2xl font-bold text-white mb-6">Contact Information</h2>
+            
+            <div className="space-y-6">
+              <div className="flex cursor-pointer items-center space-x-4 text-gray-300 hover:text-blue-400 transition-colors duration-300">
+                <div className="p-3 bg-white/10 rounded-lg">
+                  <IoMail className="text-xl" />
+                </div>
+                <span>contactayusharma@gmail.com</span>
+              </div>
+              
+              <div className="flex items-center space-x-4 text-gray-300">
+                <div className="p-3 bg-white/10 rounded-lg">
+                  <IoLocation className="text-xl" />
+                </div>
+                <span>Based in India</span>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-lg font-semibold text-white mb-4">Connect with me</h3>
+              <div className="flex space-x-4">
+                <motion.a 
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="https://www.linkedin.com/in/ayush-sharma-7a88a3274/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white/10 rounded-lg hover:bg-blue-500/20 transition-all duration-300"
+                >
+                  <IoLogoLinkedin className="text-xl text-white" />
+                </motion.a>
+                <motion.a 
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="https://github.com/ayu-sharma" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white/10 rounded-lg hover:bg-blue-500/20 transition-all duration-300"
+                >
+                  <FaGithub className="text-xl text-white" />
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/10"
+          >
+            <h2 className="text-2xl font-bold text-white mb-6">Send me a message</h2>
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
                 <input
-                  type="text"
+                  type="email"
                   id="Email"
                   name="Email"
-                  placeholder="john@example.com"
-                  className="rounded-md py-3 px-2 bg-white focus:outline-none font-thin text-sm"
+                  placeholder="Your email"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500/50 transition-colors duration-300"
                   value={formData.Email}
                   onChange={handleChange}
+                  required
                 />
               </div>
-              <div className="flex flex-col justify-between gap-1 py-3">
-                <label htmlFor="subject">Subject:</label>
+              
+              <div>
                 <input
                   type="text"
                   id="subject"
                   name="subject"
-                  placeholder="Subject..."
-                  className="rounded-md py-3 px-2 font-thin text-sm bg-white focus:outline-none"
+                  placeholder="Subject"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500/50 transition-colors duration-300"
                   value={formData.subject}
                   onChange={handleChange}
+                  required
                 />
               </div>
-              <div className="flex flex-col justify-between gap-1 py-3">
-                <label htmlFor="message">Message:</label>
+              
+              <div>
                 <textarea
                   id="message"
                   name="message"
-                  className="rounded-md py-3 px-2 font-thin text-sm bg-white focus:outline-none"
-                  style={{ resize: 'none' }}
-                  placeholder="Describe the subject..."
+                  rows="4"
+                  placeholder="Your message"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 resize-none"
                   value={formData.message}
                   onChange={handleChange}
+                  required
                 />
               </div>
-              <button
-                className={`mt-3 px-5 py-2 mx-auto bg-black text-white hover:opacity-75 ${sending ? "cursor-not-allowed" : "cursor-pointer"}`}
-                style={{ borderRadius: "15px" }}
-                disabled={sending}
-              >
-                {sending ? "Submitting" : "Submit"}
-              </button>
-              <div className="h-12 lg:h-6 py-2">
-              {sent && (
-                <p className="text-center text-green-400 pb-4">Your email has been successfully sent!</p>
-              )}
-              {errorMessage && (
-                <p className="text-center text-red-500 pb-4">{errorMessage}</p>
-              )}
+              
+              <div className="flex justify-end">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  disabled={sending}
+                  className={`inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-300 ${sending ? 'opacity-70 cursor-not-allowed' : ''}`}
+                >
+                  {sending ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message <FiSend className="ml-2" />
+                    </>
+                  )}
+                </motion.button>
+              </div>
+              
+              {/* Status Messages */}
+              <div className="h-10">
+                {sent && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center justify-center p-3 bg-green-500/20 text-green-400 rounded-lg"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Message sent successfully!
+                  </motion.div>
+                )}
+                
+                {errorMessage && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center justify-center p-3 bg-red-500/20 text-red-400 rounded-lg"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                    {errorMessage}
+                  </motion.div>
+                )}
               </div>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
