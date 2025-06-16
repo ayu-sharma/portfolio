@@ -90,7 +90,7 @@ function Herosection() {
                 size="sm"
                 className="border-purple-500 text-purple-600 hover:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-500"
               >
-                Let's Talk
+                Let&apos;s Talk
               </Button>
             </div>
             
