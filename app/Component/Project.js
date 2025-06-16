@@ -1,88 +1,67 @@
 "use client"
-import React from 'react'
-import { getProjects } from '../api/airtable-api';
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import Spinner from './Spinner';
-import ProjectCard from './ProjectCard';
+import React, { useState } from "react";
+import ProjectCard from "./ProjectCard";
+import { projects } from "../constants/projects";
+import Button from "./Button";
 
-function Project() {
-  const [projects, setProjects] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [hoveredProject, setHoveredProject] = useState(null);
-  const [playingVideo, setPlayingVideo] = useState(null);
+const PAGE_SIZE = 3;
 
-  const enterProjects = async() => {
-    setIsLoading(true);
-    try {
-      const result = await getProjects(); 
-      setProjects(result.data.records || []);
-    } catch (error) {
-      console.error("Error fetching projects:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+export default function Project() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  useEffect(() => {
-    enterProjects();
-  }, []);
+  // Filtered projects
+  const filtered = selectedCategory === "All"
+    ? projects
+    : projects.filter(p => p.category === selectedCategory);
 
-  const handleVideoPlay = (projectId) => {
-    setPlayingVideo(playingVideo === projectId ? null : projectId);
-  };
+  // Projects to show
+  const visibleProjects = filtered.slice(0, visibleCount);
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
+  // Show Load More if there are more projects to show
+  const canLoadMore = visibleCount < filtered.length;
+  // Show Show Less if more than PAGE_SIZE are shown
+  const canShowLess = visibleCount > PAGE_SIZE;
 
   return (
-    <section className="min-h-screen bg-[#0a0a0a] text-white py-16">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-6xl mx-auto"
-        >
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            My Projects
-          </h2>
-
-          {isLoading ? (
-            <div className="flex justify-center items-center min-h-[400px]">
-              <Spinner />
-            </div>
-          ) : (
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              {projects?.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  hoveredProject={hoveredProject}
-                  setHoveredProject={setHoveredProject}
-                  playingVideo={playingVideo}
-                  handleVideoPlay={handleVideoPlay}
-                />
-              ))}
-            </motion.div>
-          )}
-        </motion.div>
+    <section className="max-w-5xl mx-auto py-12 px-4">
+      {/* Header */}
+      <div className="text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-2">
+          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-4xl font-bold">Projects</span>
+        </h2>
       </div>
+
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+        {visibleProjects.map((project, idx) => (
+          <ProjectCard key={project.id || idx} project={project} />
+        ))}
+      </div>
+
+      {/* Load More & Show Less Buttons */}
+      {(canLoadMore || canShowLess) && (
+        <div className="flex justify-center gap-4">
+          {canLoadMore && (
+            <Button
+              onClick={() => setVisibleCount(c => c + PAGE_SIZE)}
+              variant="primary"
+              size="sm"
+            >
+              LOAD MORE
+            </Button>
+          )}
+          {canShowLess && (
+            <Button
+              onClick={() => setVisibleCount(PAGE_SIZE)}
+              variant="secondary"
+              size="sm"
+            >
+              SHOW LESS
+            </Button>
+          )}
+        </div>
+      )}
     </section>
   );
 }
-
-export default Project;

@@ -1,36 +1,23 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import AboutHeader from './AboutHeader';
-import AboutSection from './AboutSection';
-import SkillsSection from './SkillsSection';
-import CertificationsSection from './CertificationsSection';
-import JourneySection from './JourneySection';
+
+// Lazy load sections
+const AboutSection = lazy(() => import('./AboutSection'));
+const SkillsSection = lazy(() => import('./SkillsSection'));
+const CertificationsSection = lazy(() => import('./CertificationsSection'));
+const JourneySection = lazy(() => import('./JourneySection'));
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('about');
   const [visibleCert, setVisibleCert] = useState(null);
 
+  // Simplified animation variants
   const sectionVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 }
-    }
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
   };
 
   const handleCertClick = (certId) => {
@@ -40,20 +27,19 @@ const About = () => {
   const renderSection = () => {
     switch (activeTab) {
       case 'about':
-        return <AboutSection sectionVariants={sectionVariants} itemVariants={itemVariants} />;
+        return <AboutSection sectionVariants={sectionVariants} />;
       case 'skills':
-        return <SkillsSection sectionVariants={sectionVariants} itemVariants={itemVariants} />;
+        return <SkillsSection sectionVariants={sectionVariants} />;
       case 'certifications':
         return (
           <CertificationsSection
             sectionVariants={sectionVariants}
-            itemVariants={itemVariants}
             visibleCert={visibleCert}
             handleCertClick={handleCertClick}
           />
         );
       case 'journey':
-        return <JourneySection sectionVariants={sectionVariants} itemVariants={itemVariants} />;
+        return <JourneySection sectionVariants={sectionVariants} />;
       default:
         return null;
     }
@@ -64,7 +50,9 @@ const About = () => {
       <div className="max-w-7xl mx-auto">
         <AboutHeader activeTab={activeTab} setActiveTab={setActiveTab} />
         <div className="mt-12">
-          {renderSection()}
+          <Suspense fallback={<div className="text-center">Loading...</div>}>
+            {renderSection()}
+          </Suspense>
         </div>
       </div>
     </div>

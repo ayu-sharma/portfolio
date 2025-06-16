@@ -55,10 +55,7 @@ export default function Home() {
           <div id="contact" ref={contactRef}>
             <Contact />
           </div>
-          <div>
-            {/* <Footer className="absolute b-0 w-full" /> */}
-            <Footer/>
-          </div>
+          <Footer />
         </div>
       </div>
     </>

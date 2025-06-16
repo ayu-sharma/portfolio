@@ -1,6 +1,6 @@
 import { FaHtml5, FaCss3Alt } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
-import { SiNextdotjs } from 'react-icons/si';
+import { SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import { RiReactjsLine } from 'react-icons/ri';
 import { DiNodejs } from "react-icons/di";
 import { SiMysql, SiPython, SiMongodb } from "react-icons/si";
@@ -9,47 +9,68 @@ export const SKILLS_DATA = [
   {
     icon: FaHtml5,
     name: "HTML5",
-    color: "text-orange-500"
+    color: "text-orange-500",
+    status: "completed"
   },
   {
     icon: FaCss3Alt,
     name: "CSS3",
-    color: "text-blue-500"
+    color: "text-blue-500",
+    status: "completed"
   },
   {
     icon: IoLogoJavascript,
     name: "JavaScript",
-    color: "text-yellow-400"
+    color: "text-yellow-400",
+    status: "completed"
   },
   {
     icon: SiNextdotjs,
     name: "Next.js",
-    color: "text-gray-800"
+    color: "text-gray-800",
+    status: "completed"
   },
   {
     icon: RiReactjsLine,
     name: "React",
-    color: "text-blue-400"
+    color: "text-blue-400",
+    status: "completed"
   },
   {
     icon: DiNodejs,
     name: "Node.js",
-    color: "text-green-600"
+    color: "text-green-600",
+    status: "completed"
   },
   {
     icon: SiMysql,
     name: "MySQL",
-    color: "text-blue-800"
+    color: "text-blue-800",
+    status: "completed"
   },
   {
     icon: SiPython,
     name: "Python",
-    color: "text-blue-500"
+    color: "text-blue-500",
+    status: "learning"
   },
   {
     icon: SiMongodb,
     name: "MongoDB",
-    color: "text-green-500"
+    color: "text-green-500",
+    status: "learning"
+  },
+  {
+    icon: SiTypescript,
+    name: "TypeScript",
+    color: "text-blue-600",
+    status: "learning"
+  },
+  {
+    icon: SiTailwindcss,
+    name: "Tailwind CSS",
+    color: "text-cyan-500",
+    status: "learning"
   }
 ];
 

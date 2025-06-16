@@ -70,7 +70,7 @@ function About() {
   };
 
   return (
-    <section className="min-h-screen bg-[#0a0a0a] text-white py-16">
+    <section className="min-h-screen bg-white text-gray-900 py-16">
       <div className="container mx-auto px-4">
         <AboutHeader activeTab={activeTab} setActiveTab={setActiveTab} />
         <div className="max-w-6xl mx-auto mt-12">

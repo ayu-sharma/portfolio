@@ -37,23 +37,23 @@ const JourneySection = ({ sectionVariants, itemVariants }) => {
 
               {/* Content */}
               <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}>
-                <div className="bg-[#1a1a1a] border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10">
+                <div className="bg-white border border-gray-200 rounded-2xl p-6 transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
                       <span className="text-white font-bold">{item.year}</span>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white">{item.title}</h3>
-                      <p className="text-gray-400">{item.organization}</p>
+                      <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
+                      <p className="text-gray-600">{item.organization}</p>
                     </div>
                   </div>
-                  <p className="text-gray-300">{item.description}</p>
+                  <p className="text-gray-700">{item.description}</p>
                   {item.achievements && (
                     <ul className="mt-4 space-y-2">
                       {item.achievements.map((achievement, idx) => (
                         <li key={idx} className="flex items-start gap-2">
-                          <span className="text-blue-400 mt-1">•</span>
-                          <span className="text-gray-300">{achievement}</span>
+                          <span className="text-blue-500 mt-1">•</span>
+                          <span className="text-gray-700">{achievement}</span>
                         </li>
                       ))}
                     </ul>
