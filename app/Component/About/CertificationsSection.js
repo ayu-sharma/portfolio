@@ -8,7 +8,7 @@ import { Award, Star, Download, Eye } from 'lucide-react';
 const CERTIFICATE_PDFS = {
   GoogleCloudDigitalLeader: '/certificates/clouddigital.pdf',
   JavaScript: '/certificates/javascript.pdf',
-  IBM: '/certificates/imb.pdf'
+  IBM: '/certificates/ibm.pdf'
 };
 
 // Mock certification data
