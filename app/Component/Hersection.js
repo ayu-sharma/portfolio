@@ -45,7 +45,7 @@ function Herosection() {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
-              Hey, I'm <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500">Ayush Sharma</span>
+              Hey, I&apos;m <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500">Ayush Sharma</span>
             </h1>
             
             <div className="h-12 mb-6">

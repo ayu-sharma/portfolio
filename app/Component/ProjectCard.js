@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Github, ExternalLink } from "lucide-react";
 import Button from "./Button";
+import Image from "next/image";
 
 const ProjectCard = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -22,10 +23,11 @@ const ProjectCard = ({ project }) => {
           {project.status === 'completed' ? 'Completed' : 'Pending'}
         </span>
       </div>
-      <img
+      <Image
         src={project.image}
         alt={project.name}
-        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        fill
+        className="object-cover transition-transform duration-300 group-hover:scale-105"
         loading="lazy"
       />
       {/* Overlay on hover */}

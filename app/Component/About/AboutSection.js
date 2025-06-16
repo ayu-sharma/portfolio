@@ -14,7 +14,7 @@ const AboutSection = ({ sectionVariants }) => {
     >
       <motion.div className="order-2 md:order-1">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Hello, I'm a</span>
+          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Hello, I&apos;m a</span>
           <br />Frontend Engineer
         </h1>
         
