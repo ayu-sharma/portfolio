@@ -40,13 +40,13 @@ export const SKILLS_DATA = [
     icon: DiNodejs,
     name: "Node.js",
     color: "text-green-600",
-    status: "completed"
+    status: "learning"
   },
   {
     icon: SiMysql,
     name: "MySQL",
     color: "text-blue-800",
-    status: "completed"
+    status: "learning"
   },
   {
     icon: SiPython,
@@ -61,16 +61,10 @@ export const SKILLS_DATA = [
     status: "learning"
   },
   {
-    icon: SiTypescript,
-    name: "TypeScript",
-    color: "text-blue-600",
-    status: "learning"
-  },
-  {
     icon: SiTailwindcss,
     name: "Tailwind CSS",
     color: "text-cyan-500",
-    status: "learning"
+    status: "completed"
   }
 ];
 
