@@ -75,18 +75,18 @@ const CertificationsSection = () => {
         </h1>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 gap-8 justify-items-center">
         {CERTIFICATIONS_DATA.map((cert, index) => (
           <motion.div
             key={cert.id}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1, type: 'spring' }}
-            whileHover={{ scale: 1.1, rotateZ: 5 }}
+            whileHover={{ scale: 1.08, rotateZ: 4 }}
             className="relative group cursor-pointer"
             onClick={() => setSelectedCert(cert)}
           >
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-6 rounded-full aspect-square flex flex-col items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-shadow">
+            <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-6 rounded-full aspect-square flex flex-col items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-shadow w-36 h-36">
               <Award className="w-10 h-10 mb-3" />
               <span className="text-sm font-bold text-center leading-tight">{cert.title}</span>
             </div>

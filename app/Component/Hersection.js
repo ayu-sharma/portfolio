@@ -28,7 +28,7 @@ function Herosection() {
   };
 
   return (
-    <section className="relative min-h-screen bg-white overflow-hidden">
+    <section className="relative min-h-screen w-full bg-white overflow-hidden">
       {/* Background grid pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       

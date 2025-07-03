@@ -10,6 +10,7 @@ const SkillsSection = lazy(() => import('./SkillsSection'));
 const CertificationsSection = lazy(() => import('./CertificationsSection'));
 const JourneySection = lazy(() => import('./JourneySection'));
 
+
 const About = () => {
   const [activeTab, setActiveTab] = useState('about');
   const [visibleCert, setVisibleCert] = useState(null);

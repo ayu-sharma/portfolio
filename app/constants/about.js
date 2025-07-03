@@ -116,6 +116,38 @@ export const JOURNEY_DATA = [
   
 ];
 
+export const EXPERIENCE_DATA = [
+  {
+    id: 1,
+    title: "Frontend Intern",
+    company: "Vang Technologies",
+    location: "Remote, Bangalore",
+    duration: "May 2024 - Aug 2024",
+    description: "Developed and maintained the company website with focus on responsive UI, performance, and accessibility. Collaborated within a 3-member team to deliver features ahead of schedule.",
+    achievements: [
+      "Developed and maintained company website using React.js, Tailwind CSS, and Bootstrap with focus on responsive UI",
+      "Collaborated in a 3-member team to deliver frontend ahead of schedule, contributing to UI improvements and domain deployment",
+      "Improved website performance and accessibility, achieving a 95+ Lighthouse score in audits"
+    ],
+    technologies: ["React.js", "Tailwind CSS", "Bootstrap", "JavaScript", "Git"]
+  },
+  {
+    id: 2,
+    title: "Product Engineer Intern",
+    company: "The Curious Parent",
+    location: "Remote, Mumbai",
+    duration: "Feb 2025 - May 2025",
+    description: "Developed a modern podcast platform with dynamic content rendering, analytics, and intuitive UI. Contributed to multi-platform distribution and collaborated on design iterations using Figma.",
+    achievements: [
+      "Developed a modern, responsive podcast platform using Next.js and Tailwind CSS, implementing dynamic content rendering and audio playback functionality",
+      "Engineered a comprehensive podcast distribution system with multi-platform integration, real-time analytics, and an intuitive content management interface",
+      "Collaborated with product team to ideate and iterate UI/UX design using Figma wireframes"
+    ],
+    technologies: ["Next.js", "Tailwind CSS", "JavaScript", "Figma", "Git"]
+  }
+];
+
+
 export const ABOUT_TABS = [
   {
     title: "Skills",
