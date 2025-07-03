@@ -57,7 +57,7 @@ function Herosection() {
                   2000,
                   'Creating responsive designs',
                   2000,
-                  'Developing innovative solutions',
+                  'Capturing moments through mobile photography',
                   2000,
                 ]}
                 wrapper="div"
@@ -132,7 +132,7 @@ function Herosection() {
               {/* Main image container */}
               <div className="relative w-full pt-[100%] rounded-2xl overflow-hidden border-4 border-gray-200 shadow-2xl">
                 <Image
-                  src="/Images/Image-hero.png" 
+                  src="/Images/Image-hero.jpg" 
                   alt="Ayush Sharma"
                   fill
                   className="object-cover object-center"
@@ -144,13 +144,15 @@ function Herosection() {
                 
                 {/* Tech stack indicators - optional */}
                 <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2">
-                  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">React</span>
-                  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">Next.js</span>
-                  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">Tailwind</span>
-                  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">Node.js</span>
-                  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">MongoDB</span>
-                  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">PostgreSQL</span>
-                  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">MySQL</span>
+                <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">React</span>
+  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">Next.js</span>
+  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">Tailwind</span>
+  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">TypeScript</span>
+  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">JavaScript</span>
+  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">HTML5</span>
+  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">CSS3</span>
+  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">Redux</span>
+  <span className="bg-white/90 px-2 py-1 rounded-md text-xs text-gray-900 backdrop-blur-sm">Framer Motion</span>
                 </div>
               </div>
             </div>
