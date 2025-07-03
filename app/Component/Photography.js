@@ -14,7 +14,7 @@ const MinimalPhotography = () => {
               </span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-              When I'm not coding, you'll find me capturing moments through my camera lens. 
+              When I&apos;m not coding, you&apos;ll find me capturing moments through my camera lens. 
               I love exploring street photography, landscapes, and portraits.
             </p>
           </div>
@@ -22,9 +22,11 @@ const MinimalPhotography = () => {
           {/* Single highlight image */}
           <div className="mb-8">
             <div className="relative inline-block rounded-lg">
-              <img
+              <Image
                 src="/Images/photography.jpeg"
                 alt="Photography sample"
+                width={320}
+                height={240}
                 className="w-80 h-60 object-cover rounded-lg shadow-lg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>

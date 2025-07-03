@@ -116,7 +116,7 @@ function Contact() {
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Get In Touch</span>
           </h1>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-            Have a question or want to work together? I'd love to hear from you.
+            Have a question or want to work together? I&apos;d love to hear from you.
           </p>
         </motion.div>
 
