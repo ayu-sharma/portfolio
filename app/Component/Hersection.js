@@ -17,7 +17,7 @@ function Herosection() {
     try {
       // Create a link element to download the local PDF file
       const downloadLink = document.createElement('a');
-      downloadLink.href = '/data/ayush(resume).pdf';
+      downloadLink.href = '/data/Ayush-Resume.pdf';
       downloadLink.download = 'Ayush_Sharma_Resume.pdf';
       downloadLink.click();
     } catch (error) {
